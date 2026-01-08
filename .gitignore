@@ -1,0 +1,5 @@
+# Ignore image assets
+images/
+
+# macOS metadata
+.DS_Store
