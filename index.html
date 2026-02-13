@@ -1,217 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio- Pakhi</title>
+    <meta name="description"
+        content="Portfolio of Pakhi Chatterjee, a Computer Science MS student at Ohio State University specializing in AI/ML, Computer Vision, and LLMs. Open to ML and SWE roles.">
+    <meta name="keywords"
+        content="Pakhi Chatterjee, AI, Machine Learning, Computer Vision, LLM, Portfolio, Software Engineer, Ohio State University">
+    <meta property="og:title" content="Pakhi Chatterjee | AI & Computer Vision Engineer">
+    <meta property="og:description" content="Building AI systems that teams trust and users love. MS CS at OSU.">
+    <meta property="og:image" content="images/me.png">
+    <meta property="og:url" content="https://pakhi-02.github.io/">
+    <title>Pakhi Chatterjee | AI & Computer Vision Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/bd1bd309b7.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div id="header">
-        <div class="container"></div>  
-        <nav>
-            <img src="images/ethicalhacking.jpg" class="logo" width="300" height="100">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i>
-            </ul>
-            <i class="fas fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-text">
-            <p>Web Developer</p>
-            <h1>Hi, I am <span>Pakhi</span><br>Chatterjee from India</h1>
-        </div>
-    </div>
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/WhatsApp Image 2022-11-22 at 23.57.44.jpg" alt="">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>Hi, I am Pakhi.<br>
-                    I am a 3rd year B.tech IT student from SRM, Chennai <br>
-                    My strengths are python and frontend development.
-                    </p>
 
-                    <div class="tab-titles">
-                      <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                      <p class="tab-links" onclick="opentab('experience')">Experience</p> 
-                      <p class="tab-links" onclick="opentab('education')">Education</p>   
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>UI/UX</span><br>Designing Interfaces</li>
-                            <li><span>Web development</span><br>Developing WebSites</li>
-                            <li><span>BlockChain</span><br>learning</li>
-                            <li><span>Pen Testing</span><br>Cyber Security</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Viral Fission</span><br>Team Lead</li>
-                            <li><span>Studnt Hut</span><br>Dveploment Team</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>10th</span><br>Kaanger Valley Academy</li>
-                            <li><span>12th PCM</span><br>Kaanger Valley Academy</li>
-                            <li><span>B.Tech (3rd Year) 9.38 CGPA</span><br>SRM University</li>
-                        </ul>
-                    </div>
-                </div>
+<body class="landing-locked">
+    <canvas class="landing-canvas" id="neural-canvas" aria-hidden="true"></canvas>
+    <div class="landing-bg" aria-hidden="true"></div>
+
+    <section class="landing" id="top">
+        <div class="landing-content">
+            <img class="landing-avatar" src="images/me.png" alt="Portrait of Pakhi Chatterjee">
+            <p class="landing-eyebrow">AIML • Computer Vision • LLMs</p>
+            <h1><span class="typewriter" id="landing-hook"></span></h1>
+            <p class="landing-subtitle">MS in Computer Science @ Ohio State. Open to ML, data, and SWE roles.</p>
+            <p class="landing-hint">Scroll or click to enter</p>
+        </div>
+    </section>
+
+    <main id="site-content" class="site-content">
+        <header class="site-header animate-on-scroll">
+            <div class="container nav">
+                <a class="brand" href="#top">Pakhi <span>Chatterjee</span></a>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+                <nav id="nav-menu" class="nav-menu">
+                    <a href="#about">About</a>
+                    <a href="#work">Work</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
-        </div>
-    </div>
 
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div>
-                    <i class="fa-solid fa-code"></i>
-                    <h2>Freelancer</h2>
-                    <p>I make WebSites</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div>
-                    <i class="fa-solid fa-crop-simple"></i>
-                    <h2>UI/UX Design</h2>
-                    <p>Designing</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div>
-                    <i class="fa-brands fa-app-store-ios"></i>
-                    <h2>App Design</h2>
-                    <p>Designing</p>
-                    <a href="#">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="portfolio">
-        <div class="container">
-            <h1 class="sub-title">My Work</h1>
-                <div class="work-list">
-                <div class="work">
-                    <img src="images/ethicalhacking.jpg" alt="">
-                    <div class="layer">
-                        <h3>Ethical Hacking</h3>
-                        <p>Windows 10 Hacking</p>
-                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            <section id="hero" class="hero-section">
+                <div class="container hero-grid">
+                    <div class="hero-text">
+                        <p class="eyebrow">AI-ML • COMPUTER VISION • LLMS</p>
+                        <h1>Designing AI systems that teams trust and users love.</h1>
+                        <p class="hero-hook">Training models by day, debugging pipelines by night.</p>
+                        <p class="lead">MS Computer Science @ Ohio State. I build ML products with strong evaluation,
+                            clean engineering, and measurable impact.</p>
+                        <div class="hero-actions">
+                            <a class="btn primary" href="#work">View work</a>
+                            <a class="btn ghost" href="images/Resume.pdf" download>Download CV</a>
+                        </div>
+                        <div class="hero-socials">
+                            <a href="https://www.linkedin.com/in/pakhi-chatterjee-94b4a4121/" target="_blank"
+                                aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://github.com/pakhi-02" target="_blank" aria-label="GitHub"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a href="mailto:chatterjee.197@osu.edu" aria-label="Email"><i
+                                    class="fa-solid fa-envelope"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="work-list">
-                    <div class="work">
-                        <img src="images/kali.jpg" alt="">
-                        <div class="layer">
-                            <h3>Kali Linux</h3>
-                            <p>Basic Cmd (terminal)</p>
-                            <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    <div class="hero-feature">
+                        <div class="hero-card">
+                            <div class="visual-hero">
+                                <div class="cone-grid"></div>
+                                <div class="cone-scan"></div>
+                                <div class="cone-highlight"></div>
+                            </div>
+                            <p class="mini-title">Master’s Research</p>
+                            <h3>AOOCT Cone Segmentation</h3>
+                            <p>Working with advanced imaging techniques to improve cone segmentation accuracy.</p>
+                            <div class="hero-card-stats">
+                                <div>
+                                    <strong>3</strong>
+                                    <span>Active projects</span>
+                                </div>
+                                <div>
+                                    <strong>1</strong>
+                                    <span>Research tracks</span>
+                                </div>
+                            </div>
+                            <div class="hero-card-links">
+                                <a href="#work" aria-label="See work"><i class="fa-solid fa-arrow-right"></i></a>
+                                <a href="#contact" aria-label="Contact"><i class="fa-solid fa-paper-plane"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="work-list">
-                            <div class="work">
-                                <img src="images/1-21.png" alt="">
-                                <div class="layer">
-                                    <h3>Ethical Hacking</h3>
-                                    <p>Windows 10 Hacking</p>
-                                    <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-                                </div>
-                            </div>
-                </div>        
-        </div>
-        <a href="#" class="btn">See More</a>
-        </div>
-    </div>
+            </section>
+        </header>
 
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-square-envelope"></i> pc2939@srmist.edu.in</p>
-                    <p><i class="fa-solid fa-phone"></i> +91 99773XXXXX</p>
-                    <div class="social-icons">
-                        <a href="https://www.instagram.com/yo_random.gurl/"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/pakhi-chatterjee-94b4a4121/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/pakhi-02"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.hackerrank.com/cpakhi"><i class="fa-brands fa-hackerrank"></i></a>
+        <section id="about" class="section animate-on-scroll">
+            <div class="container about-grid">
+                <div>
+                    <!-- Pillars on Left -->
+                    <div class="about-pillars">
+                        <div class="pillar-card">
+                            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                            <p><strong>MS in Computer Science</strong><br>The Ohio State University</p>
+                            <p><strong>B. Tech in Computer Science</strong><br>SRM Institute of Science and Technology
+                            </p>
+                        </div>
+                        <div class="pillar-card">
+                            <h3><i class="fa-solid fa-microchip"></i> Focus</h3>
+                            <p>Computer Vision, LLM evaluation, Applied Statistics, Building Scalable ML Systems</p>
+                        </div>
+                        <div class="pillar-card">
+                            <h3><i class="fa-solid fa-briefcase"></i> Availability</h3>
+                            <p>Open to <strong>ML Engineer</strong>, <strong>Data Scientist</strong>, and
+                                <strong>SWE</strong> roles.
+                            </p>
+                        </div>
                     </div>
-                    <a href="images/pakhi resume.pdf" download class="btn btn2">Download CV</a>
                 </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your E-mail" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
+                <!-- Visual + Text on Right -->
+                <div class="about-panel">
+                    <div class="about-visual" role="img" aria-label="Abstract research visualization">
+                        <div class="about-visual-content">
+                            <h2>About</h2>
+                            <p>I’m a builder who thrives at the intersection of ML research and product engineering. I
+                                love
+                                taking messy data, defining the right metrics, and shipping AI that people can actually
+                                use.</p>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <span>Based in</span>
+                        <strong>Columbus, OH</strong>
+                        <p>Open to relocation & remote roles</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="copyright">
-            <p>copyright © Pakhi <i class="fa-solid fa-heart"></i></p>
-        </div>
-    </div>
-    
- 
+        </section>
+
+        <section id="work" class="section alt animate-on-scroll">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Featured Work</h2>
+                    <p>Selected projects with measurable outcomes and production-ready pipelines.</p>
+                </div>
+                <div class="grid three">
+                    <article class="project-card">
+                        <div class="project-visual" role="img" aria-label="LLM grading visualization">
+                            <div class="tech-visual">
+                                <div class="visual-doc">
+                                    <div class="doc-line"></div>
+                                    <div class="doc-line"></div>
+                                    <div class="doc-line"></div>
+                                    <div class="scan-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>long-doc-summarization-nlp</h3>
+                            <p>Long-document text summarization system using chunking and hierarchical transformer-based
+                                models to handle long-context documents with reduced hallucination.</p>
+                            <div class="project-tags">
+                                <span>LLMs</span>
+                                <span>Evaluation</span>
+                                <span>EdTech</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-visual" role="img" aria-label="Medical imaging visualization">
+                            <div class="tech-visual">
+                                <div class="visual-medical">
+                                    <div class="pulse-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Bone-Age Estimation</h3>
+                            <p>Deep neural networks for robust pediatric radiology estimation.</p>
+                            <div class="project-tags">
+                                <span>Medical AI</span>
+                                <span>CNNs</span>
+                                <span>Research</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <div class="project-visual" role="img" aria-label="Computer vision visualization">
+                            <div class="tech-visual">
+                                <div class="visual-vision">
+                                    <div class="reticle-corner tl"></div>
+                                    <div class="reticle-corner tr"></div>
+                                    <div class="reticle-corner bl"></div>
+                                    <div class="reticle-corner br"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Vision Systems</h3>
+                            <p>Movement recognition and real-time facial recognition pipelines.</p>
+                            <div class="project-tags">
+                                <span>Real-time</span>
+                                <span>OpenCV</span>
+                                <span>Deployment</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section animate-on-scroll">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Skills & Stack</h2>
+                    <p>Capabilities that help me go from research to production.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skills-card">
+                        <h3><i class="fa-solid fa-brain"></i> ML & Data</h3>
+                        <div class="pill-row">
+                            <span>Model training</span>
+                            <span>Experiment tracking</span>
+                            <span>Evaluation</span>
+                            <span>Feature engineering</span>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <h3><i class="fa-solid fa-eye"></i> Computer Vision</h3>
+                        <div class="pill-row">
+                            <span>Detection</span>
+                            <span>Segmentation</span>
+                            <span>Tracking</span>
+                            <span>OpenCV</span>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <h3><i class="fa-solid fa-message"></i> LLM Systems</h3>
+                        <div class="pill-row">
+                            <span>Prompting</span>
+                            <span>RAG</span>
+                            <span>LangChain</span>
+                            <span>Evaluation</span>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <h3><i class="fa-solid fa-terminal"></i> Engineering</h3>
+                        <div class="pill-row">
+                            <span>Python</span>
+                            <span>C++</span>
+                            <span>SQL</span>
+                            <span>APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section alt animate-on-scroll">
+            <div class="container">
+                <div class="section-head">
+                    <h2>How I Work</h2>
+                    <p>Clear process, fast iteration, and measurable outcomes.</p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="timeline-step">01</div>
+                        <div>
+                            <h3>Define the KPI</h3>
+                            <p>Align on metrics, data sources, and success criteria before training a single model.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-step">02</div>
+                        <div>
+                            <h3>Ship the baseline</h3>
+                            <p>Build a trusted baseline, then iterate with error analysis and ablations.</p>
+                        </div>
+                    </article>
+                    <article class="timeline-item">
+                        <div class="timeline-step">03</div>
+                        <div>
+                            <h3>Deploy & monitor</h3>
+                            <p>Deliver reproducible pipelines, tracking drift and real-world performance.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section animate-on-scroll">
+            <div class="container contact">
+                <div>
+                    <h2>Let’s build together</h2>
+                    <p>Hiring for ML, Data, or SWE? I’d love to hear about your team’s goals.</p>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-square-envelope"></i> chatterjee.197@osu.edu</p>
+                        <p><i class="fa-solid fa-location-dot"></i> Columbus, OH (Open to relocation)</p>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="images/Resume.pdf" download class="btn primary">Download CV</a>
+                    </div>
+                </div>
+                <form class="contact-form" name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <textarea name="Message" rows="6" placeholder="Tell me about your project"></textarea>
+                    <button type="submit" class="btn primary">Send message</button>
+                    <span id="msg"></span>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <p>© 2026 Pakhi Chatterjee. Crafted with care.</p>
+            </div>
+        </footer>
+    </main>
+
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");   
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");   
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab"); 
-        }
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+
+        navToggle.addEventListener("click", () => {
+            const isOpen = navToggle.getAttribute("aria-expanded") === "true";
+            navToggle.setAttribute("aria-expanded", String(!isOpen));
+            navMenu.classList.toggle("is-open");
+        });
     </script>
 
     <script>
-       
-       var sidemenu = document.getElementById("sidemenu");
-       function openmenu(){
-            sidemenu.style.right = "0";
-        }
+        const hookText = "I build AI that moves metrics, not just models.";
+        const hookEl = document.getElementById("landing-hook");
+        let hookIndex = 0;
 
-        function closemenu(){
-            sidemenu.style.right = "-200px";
-        }
+        const typeHook = () => {
+            if (!hookEl) return;
+            hookEl.textContent = hookText.slice(0, hookIndex);
+            if (hookIndex < hookText.length) {
+                hookIndex += 1;
+                setTimeout(typeHook, 55);
+            }
+        };
+
+        typeHook();
     </script>
 
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyv8wq6Dm2FVOextxJvEzcpuXpAQggHDrQMrB-W0LNq6K2Vx_3iSd3KnNSAzsw-kyOZrQ/exec '
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Form filled successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
+    <script>
+        const animatedSections = document.querySelectorAll(".animate-on-scroll");
+        const revealOnScroll = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        revealOnScroll.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+
+        animatedSections.forEach((section) => revealOnScroll.observe(section));
+    </script>
+
+    <script>
+        // Scroll / Enter Logic
+        const unlockSite = () => {
+            const landing = document.querySelector(".landing");
+            const body = document.body;
+            const hero = document.getElementById("hero");
+
+            landing.classList.add("is-hidden");
+
+            setTimeout(() => {
+                landing.classList.add("is-removed");
+                body.classList.remove("landing-locked");
+
+                // Reveal content
+                document.querySelector(".site-content").classList.add("is-visible");
+
+                // Scroll to hero
+                if (hero) {
+                    hero.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 600);
+        };
+
+        document.querySelector(".landing").addEventListener("click", unlockSite);
+        document.addEventListener("wheel", (e) => {
+            if (document.body.classList.contains("landing-locked")) {
+                unlockSite();
+            }
+        });
+        // Added back touchmove and keydown listeners for completeness,
+        // assuming they should still trigger the site unlock.
+        window.addEventListener("touchmove", (e) => {
+            if (document.body.classList.contains("landing-locked")) {
+                unlockSite();
+            }
+        }, { passive: true });
+        // 3D Tilt Effect for Project Cards
+        const cards = document.querySelectorAll('.project-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -5; // Max -5deg to 5deg
+                const rotateY = ((x - centerX) / centerX) * 5;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+                // Add sheen effect
+                const sheen = card.querySelector('.sheen');
+                if (sheen) {
+                    sheen.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.1), transparent 40%)`;
+                }
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+            });
+        });
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyv8wq6Dm2FVOextxJvEzcpuXpAQggHDrQMrB-W0LNq6K2Vx_3iSd3KnNSAzsw-kyOZrQ/exec '
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(() => {
+                    msg.innerHTML = "Thanks! Your message was sent."
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
         })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+    </script>
+
+    <script>
+        const canvas = document.getElementById("neural-canvas");
+        const ctx = canvas.getContext("2d");
+        let nodes = [];
+        const nodeCount = 90; // Increased density
+        let mouse = { x: null, y: null, radius: 150 };
+
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+
+        window.addEventListener('mousemove', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = event.clientX - rect.left;
+            mouse.y = event.clientY - rect.top;
+        });
+
+        // Clear mouse position when leaving canvas to stop interaction
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Node {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.8; // Slower, smoother movement
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.size = Math.random() * 2 + 1; // Varied node sizes
+                this.baseSize = this.size;
+                // AI/Tech colors: specialized blues and cyans/purples vs random hues
+                this.color = Math.random() > 0.5 ? '#7c5cff' : '#5bcfeb';
+            }
+
+            update() {
+                // Move
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Bounce off edges
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+
+                // Mouse interaction
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        const directionX = forceDirectionX * force * 3; // Strength of push
+                        const directionY = forceDirectionY * force * 3;
+
+                        this.x -= directionX;
+                        this.y -= directionY;
+
+                        // Mild growth effect near mouse
+                        if (this.size < this.baseSize * 2.5) this.size += 0.1;
+                    } else {
+                        if (this.size > this.baseSize) this.size -= 0.1;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                // Add glow
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = this.color;
+                ctx.fill();
+                ctx.shadowBlur = 0; // Reset for lines
+            }
+        }
+
+        const initNodes = () => {
+            nodes = [];
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push(new Node());
+            }
+        };
+
+        const connect = () => {
+            let opacityValue = 1;
+            for (let a = 0; a < nodes.length; a++) {
+                for (let b = a; b < nodes.length; b++) {
+                    let distance = ((nodes[a].x - nodes[b].x) * (nodes[a].x - nodes[b].x)) +
+                        ((nodes[a].y - nodes[b].y) * (nodes[a].y - nodes[b].y));
+
+                    // Connection distance threshold
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        if (opacityValue > 0) {
+                            ctx.strokeStyle = `rgba(124, 92, 255, ${opacityValue * 0.4})`; // Accent color lines
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[a].x, nodes[a].y);
+                            ctx.lineTo(nodes[b].x, nodes[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+        };
+
+        const animate = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < nodes.length; i++) {
+                nodes[i].update();
+                nodes[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        };
+
+        window.addEventListener("resize", () => {
+            resizeCanvas();
+            initNodes();
+        });
+
+        resizeCanvas();
+        initNodes();
+        animate();
+
+        // Process Toggle Logic
+        const processToggleBtn = document.getElementById('process-toggle');
+        const processWrapper = document.getElementById('process-wrapper');
+
+        if (processToggleBtn && processWrapper) {
+            processToggleBtn.addEventListener('click', () => {
+                const isExpanded = processWrapper.classList.contains('expanded');
+
+                if (isExpanded) {
+                    processWrapper.classList.remove('expanded');
+                    processToggleBtn.classList.remove('active');
+                    processToggleBtn.querySelector('span').textContent = 'View Process';
+                } else {
+                    processWrapper.classList.add('expanded');
+                    processToggleBtn.classList.add('active');
+                    processToggleBtn.querySelector('span').textContent = 'Hide Process';
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>
